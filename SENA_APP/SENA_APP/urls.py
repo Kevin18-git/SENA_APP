@@ -26,7 +26,7 @@ urlpatterns = [
     path('programas/', include('programas.urls', namespace='programas')),
 ]
 
-# Personalización del panel administrativo
+
 admin.site.site_header = "Panel Administrativo SENA"
 admin.site.site_title = "SENA APP"
 admin.site.index_title = "Gestión de Aprendices"
