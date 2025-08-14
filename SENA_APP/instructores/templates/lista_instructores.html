@@ -9,7 +9,7 @@
             <h2>Lista de Instructores SENA</h2>
             <div>
                 <span class="badge bg-info fs-6">Total: {{ total_instructores }} Instructores</span>
-                <a href="{% url 'admin:instructores_instructor_add' %}" class="btn btn-success ms-2">
+                <a href="{% url 'instructores:crear_instructor' %}" class="btn btn-success ms-2">
                     Nuevo Instructor
                 </a>
             </div>
@@ -34,12 +34,13 @@
                         <th>Nivel Educativo</th>
                         <th>Fecha Nacimiento</th>
                         <th>Especialidad</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for instructor in lista_instructores %}
                     <tr>
-                        <td><strong>{{ instructor.documento_identidad }}</strong></td>
+                        <td><strong><a href ="instructor/{{ instructor.id }}">{{ instructor.documento_identidad }}</a></strong></td>
                         <td>{{ instructor.tipo_documento }}</td>
                         <td>{{ instructor.nombre_completo }}</td>
                         <td>
@@ -72,7 +73,7 @@
             <p>Aún no se han registrado Instructores en el sistema.</p>
             <hr>
             <p class="mb-0">
-                <a href="{% url 'admin:aprendices_aprendiz_add' %}" class="btn btn-success">
+                <a href="{% url 'admin:instructores_instructor_add' %}" class="btn btn-success">
                     Registrar Primer Instructor
                 </a>
             </p>

@@ -1,6 +1,4 @@
 from django.db import models
-
-# Create your models here.
 class Instructor(models.Model):
     TIPO_DOCUMENTO_CHOICES = [
         ('CC', 'Cédula de Ciudadanía'),

@@ -200,7 +200,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
             <a class="navbar-brand" href="{% url 'aprendices:inicio' %}">
                 <img width="50px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX6Gat1r36ATdBS7sTqqFH8TvIVPMkqsdLgw&s" alt="Logo Sena">
@@ -211,20 +211,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item ms-auto">
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'aprendices:inicio' %}">Inicio</a>
                     </li>
-                    <li class="nav-item ms-auto">
-                        <a class="nav-link" href="{% url 'aprendices:lista_aprendices' %}">Aprendices</a>
-                    </li>
-                    <li class="nav-item ms-auto">
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'admin:index' %}">Panel Admin</a>
-                    </li>
-                    <li class="nav-item ms-auto">
-                        <a class="nav-link" href="{% url 'instructores:lista_instructores' %}">Instructores</a>
-                    </li>
-                    <li class="nav-item ms-auto">
-                        <a class="nav-link" href="{% url 'programas:lista_programas' %}">programas</a>
                     </li>
                 </ul>
             </div>

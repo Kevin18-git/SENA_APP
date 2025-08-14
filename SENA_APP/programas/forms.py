@@ -1,0 +1,17 @@
+# programas/forms.py
+
+from django import forms
+from .models import Programa
+
+class ProgramaForm(forms.ModelForm):
+    class Meta:
+        model = Programa
+        # Excluimos 'fecha_inicio' porque auto_now_add=True lo hace no editable
+        fields = ['nombre', 'ficha', 'fecha_finalizacion', 'nivel_formacion']
+        
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'ficha': forms.TextInput(attrs={'class': 'form-control'}),
+            'fecha_finalizacion': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
+            'nivel_formacion': forms.Select(attrs={'class': 'form-control'}),
+        }
