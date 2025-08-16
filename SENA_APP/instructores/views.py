@@ -5,7 +5,6 @@ from django.contrib import messages
 from .models import Instructor
 from .forms import InstructorForm
 
-# Create your views here.
 
 def instructores(request):
     lista_instructores = Instructor.objects.all().order_by('apellido', 'nombre')

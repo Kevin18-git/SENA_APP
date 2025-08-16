@@ -1,12 +1,9 @@
-# programas/forms.py
-
 from django import forms
 from .models import Programa
 
 class ProgramaForm(forms.ModelForm):
     class Meta:
         model = Programa
-        # Excluimos 'fecha_inicio' porque auto_now_add=True lo hace no editable
         fields = ['nombre', 'ficha', 'fecha_finalizacion', 'nivel_formacion']
         
         widgets = {

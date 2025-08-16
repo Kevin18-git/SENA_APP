@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('aprendices.urls')),
     path('', include('instructores.urls')),
     path('programas/', include('programas.urls', namespace='programas')),
+    path('excusas/', include('excusas.urls')),
 ]
 
 

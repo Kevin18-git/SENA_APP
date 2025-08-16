@@ -1,5 +1,3 @@
-# instructores/forms.py
-
 from django import forms
 from .models import Instructor
 
@@ -7,6 +5,7 @@ class InstructorForm(forms.ModelForm):
     class Meta:
         model = Instructor
         fields = '__all__'
+        exclude = ['fecha_registro']
         widgets = {
             'documento_identidad': forms.TextInput(attrs={'class': 'form-control'}),
             'tipo_documento': forms.Select(attrs={'class': 'form-control'}),
@@ -22,5 +21,4 @@ class InstructorForm(forms.ModelForm):
             'anos_experiencia': forms.NumberInput(attrs={'class': 'form-control'}),
             'activo': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
             'fecha_vinculacion': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            'fecha_registro': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
         }

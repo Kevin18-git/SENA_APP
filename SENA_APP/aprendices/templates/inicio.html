@@ -22,6 +22,9 @@
             <a class="btn btn-light btn-lg" href="{% url 'aprendices:lista_cursos' %}" role="button">
                 Ver Cursos
             </a>
+            <a href="{% url 'excusas:lista_excusas' %}" class="btn btn-light btn-lg">
+                Ver Excusas
+            </a>
         </div>
     </div>
 </div>
@@ -66,6 +69,18 @@
                 <p class="card-text">Total de Cursos: {{ total_cursos}}</p>
                 <p class="card-text">Cursos Activos: {{ cursos_activos}}</p>
                 <a href="{% url 'aprendices:lista_cursos' %}" class="btn btn-success">Ver Lista</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Lista de Excusas</h5>
+                <p class="card-text">Consulta todas las excusas registradas en el sistema.</p>
+                <p class="card-text">Total de Excusas: {{ total_excusas }}</p>
+                <a href="{% url 'excusas:lista_excusas' %}" class="btn btn-success">Ver Lista</a>
             </div>
         </div>
     </div>

@@ -1,4 +1,3 @@
-# SENA_APP/programas/models.py
 from django.db import models
 
 class Programa(models.Model):

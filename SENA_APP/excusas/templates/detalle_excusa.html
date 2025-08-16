@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle de Excusa{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h3 class="card-title mb-0">Detalle de Excusa</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Aprendiz:</strong> {{ excusa.aprendiz.nombre }}</p>
+                <p><strong>Ficha:</strong> {{ excusa.aprendiz.ficha }}</p>
+                <p><strong>Programa:</strong> {{ excusa.programa.nombre }}</p>
+                <p><strong>Tipo de Excusa:</strong> {{ excusa.get_tipo_excusa_display }}</p>
+                <p><strong>Motivo:</strong> {{ excusa.motivo }}</p>
+                <p><strong>Fecha de Registro:</strong> {{ excusa.fecha_registro|date:"d/m/Y H:i" }}</p>
+                <p><strong>Estado Actual:</strong> <span class="badge bg-{{ excusa.estado|lower }}">{{ excusa.estado }}</span></p>
+
+                {% if excusa.archivo_adjunto %}
+                    <p><strong>Documento Adjunto:</strong> <a href="{{ excusa.archivo_adjunto.url }}" target="_blank">Ver Archivo</a></p>
+                {% endif %}
+
+                <hr>
+                <h5>Cambiar Estado de la Excusa</h5>
+                <form method="post" action="{% url 'excusas:actualizar_estado' excusa.id %}">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <select class="form-select" name="estado">
+                            <option value="" disabled>Seleccionar estado</option>
+                            <option value="Recibida" {% if excusa.estado == 'Recibida' %}selected{% endif %}>Recibida</option>
+                            <option value="No Recibida" {% if excusa.estado == 'No Recibida' %}selected{% endif %}>No Recibida</option>
+                        </select>
+                        <button class="btn btn-primary" type="submit">Actualizar</button>
+                    </div>
+                </form>
+
+                <div class="mt-4">
+                    <a href="{% url 'excusas:lista_excusas' %}" class="btn btn-secondary">Volver a la Lista</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
