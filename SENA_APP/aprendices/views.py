@@ -1,7 +1,9 @@
+# aprendices/views.py
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
 from django.contrib import messages
 from django.urls import reverse_lazy
+
 from .models import Aprendiz, Curso
 from .forms import AprendizForm
 from instructores.models import Instructor
@@ -43,7 +45,7 @@ def lista_cursos(request):
         'total_cursos': cursos.count(),
         'titulo': 'Lista de Cursos'
     }
-    return render(request, 'cursos/lista_cursos.html', context)
+    return render(request, 'lista_cursos.html', context)
 
 
 def detalle_curso(request, curso_id):
