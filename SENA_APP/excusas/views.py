@@ -15,7 +15,7 @@ def crear_excusa(request):
         form = ExcusaForm()
     
     context = {'form': form, 'titulo': 'Registrar Excusa'}
-    return render(request, 'crear_excusa.html', context) # <--- CORREGIDO
+    return render(request, 'crear_excusa.html', context)
 
 def lista_excusas(request):
     query = request.GET.get('q')
@@ -45,11 +45,11 @@ def lista_excusas(request):
         'tipo_seleccionado': tipo,
         'estado_seleccionado': estado,
     }
-    return render(request, 'lista_excusas.html', context) # <--- CORREGIDO
+    return render(request, 'lista_excusas.html', context)
 
 def detalle_excusa(request, excusa_id):
     excusa = get_object_or_404(Excusa, id=excusa_id)
-    return render(request, 'detalle_excusa.html', {'excusa': excusa}) # <--- CORREGIDO
+    return render(request, 'detalle_excusa.html', {'excusa': excusa})
 
 def actualizar_estado_excusa(request, excusa_id):
     if request.method == 'POST':
